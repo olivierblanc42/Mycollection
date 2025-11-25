@@ -24,9 +24,10 @@ Encore
     .addEntry('front_scripts', './assets/front/script/index.ts')
     .addStyleEntry('front_styles', './assets/front/style/index.scss') 
 
+    .addEntry('back_scripts', './assets/back/script/index.ts')
+    .addStyleEntry('back_style', './assets/back/style/index.scss') 
 
-    .addEntry('script', './assets/script/index.ts')
-    .addStyleEntry('style', './assets/style/index.scss') 
+
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
