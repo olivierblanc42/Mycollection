@@ -1,0 +1,32 @@
+//Font//
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+$font-primary:"Raleway",sans-serif;
+$font-secondary: "Lato",sans-serif;
+
+//Color//
+
+$color-white: #fcfcfc; 
+$color-light-gray: #ecf0f1; 
+$color-orange: #f9a620; 
+$color-red: #ff1b1c; 
+$color-dark-gray: #1c1d21; 
+
+
+//Padding//
+$padding : .8rem;
+$padding-xxs : $padding * 0.125;
+$padding-xs : $padding * 0.25;
+$padding-s : $padding * 0.5;
+$padding-m : $padding;
+$padding-l : $padding * 2;
+$padding-xl : $padding * 3;
+$padding-xxl : $padding * 4;
+
+//Margin//
+$margin: 1rem;
+$margin-s : $margin * 0.5;
+$margin-m : $margin;
+$margin-l : $margin * 2;
+$margin-xl : $margin * 3;
+$margin-xxl : $margin * 4;
