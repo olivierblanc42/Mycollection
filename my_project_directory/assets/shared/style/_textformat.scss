@@ -1,0 +1,35 @@
+// Load the variables file with alias v //
+@use "variable" as v;
+
+/*TextFormat*/
+
+body{
+    margin: 0px;
+}
+
+header {
+    color: v.$color-white;
+}
+
+footer {
+    color: v.$color-white;
+}
+
+
+p {
+    font-family: v.$font-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: v.$font-secondary;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+span {
+    color: v.$color-red;
+}
