@@ -1,0 +1,15 @@
+// Load the variables file with alias v //
+@use "../../../shared/style/variable" as v;
+
+.navbar {
+    background-color: v.$color-dark-gray;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly ;
+    padding-top: v.$padding-m;
+    padding-bottom: v.$padding-m;
+    .logo {
+        width: 8.375rem;
+    }
+}
