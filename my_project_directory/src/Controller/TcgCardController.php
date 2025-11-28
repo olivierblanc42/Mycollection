@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class TcgCardController extends AbstractController
 {
-    #[Route('/tcg/card', name: 'app_tcg_card')]
+    #[Route('/tcgCard', name: 'app_tcg_card')]
     public function index(): Response
     {
         return $this->render('front/tcg_card/index.html.twig', [
