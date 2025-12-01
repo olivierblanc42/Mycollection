@@ -1,6 +1,24 @@
 <nav class="navbar">
+    <img class="logo" src="build/img/logo.webp" />
 
-<img class="logo"
-    src="build\img\logo.webp"/>
     <i class="fa-solid fa-list"></i>
+
+    <div class="navbar-links">
+
+        <a href="{{path('app_tcg_card')}}">
+            <i class="icon-tcg"></i>
+            <p>TCG</p>
+        </a>
+
+        <a href="{{path('app_goodie')}}">
+            <i class="icon-goodies"></i>
+            <p>Goodies</p>
+        </a>
+
+        <a href="#">
+            <i class="icon-user"></i>
+            <p>Compte</p>
+        </a>
+
+    </div>
 </nav>
