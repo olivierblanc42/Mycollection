@@ -2,11 +2,10 @@
 @use "../../../shared/style/variable" as v;
 
 .navbar {
-    background-color: v.$color-dark-gray;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding-top: v.$padding-m;
     padding-bottom: v.$padding-m;
 
