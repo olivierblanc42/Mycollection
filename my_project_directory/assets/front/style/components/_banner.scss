@@ -1,0 +1,11 @@
+@use "../../../shared/style/variable" as v;
+.banner{
+    h1{
+      font-size: v.$banner-mobile-2
+    }
+    p{
+        font-size: v.$banner-mobile-1;
+        font-weight: bold;
+        font-style:italic;
+    }
+}
