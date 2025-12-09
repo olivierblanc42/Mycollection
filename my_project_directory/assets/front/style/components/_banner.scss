@@ -1,11 +1,37 @@
 @use "../../../shared/style/variable" as v;
-.banner{
-    h1{
-      font-size: v.$banner-mobile-2
-    }
-    p{
+
+.banner {
+  color: v.$color-dark-gray;
+  background-image: url("../../../img/banner.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: v.$padding-xxl ;
+  padding-bottom: v.$padding-xxl ;
+  margin-bottom: v.$margin-l;
+
+  .container {
+    div {
+      background-color: rgba(252, 252, 252, 0.5);
+      padding: v.$padding ;
+      display: inline-block;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+
+      h1 {
+        font-size: v.$banner-mobile-2;
+        margin: 0px;
+      }
+
+      p {
         font-size: v.$banner-mobile-1;
         font-weight: bold;
-        font-style:italic;
+        font-style: italic;
+        margin: 0px;
+      }
     }
+
+  }
 }
