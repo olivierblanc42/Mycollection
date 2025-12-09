@@ -3,12 +3,72 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<div class="container">
+
+{# Banner #}
 <div class="banner">
-<h1><span>MY</span>COLLECTION</h1>
-<p>Tout pour votre collection</p>
+    <div class="container">
+        <div >
+            <h1><span>MY</span>COLLECTION</h1>
+            <p>Tout pour votre collection</p>
+        </div>
+    </div>
 </div>
 
+{# Cards #}
+<div class="container">
+    <div class="cards-home">
+        <div class="card card-home">
+            <div class="card-home_div_imgs home_goodies">
+                <img class="card-home__img" src="build/img/goodies.webp">
+            </div>
+            <div class="card-home_div_infos">
+                <p>Rechercher un goodie simplement</p>
+                <p>Recherchez par <span>serie</span>, par <span>nom</span>...</p>
+                <a href="{{path('app_goodie')}}" class="btn btn-red">Parcourir les goodies</a>
+            </div>
+
+        </div>
+
+        <div class="card card-home">
+            <div class="card-home_div_imgs home_tcg">
+                <img class="card-home__img" src="build/img/tcg.webp">
+            </div>
+            <div class="card-home_div_infos">
+                <p>Explore les cartes sans Effort</p>
+                <p>Recherchez par <span>serie</span>, par <span>extension</span>...</p>
+                <a href="{{path('app_tcg_card')}}" class="btn btn-red">Parcourir les cartes</a>
+            </div>
+        </div>
+
+
+
+        <div class="card card-home">
+            <div class="card-home_div_imgs home_collection">
+                <img class="card-home__img" src="build/img/collection.webp">
+            </div>
+
+            <div class="card-home_div_infos">
+                <p>Voyer votre collection prendre forme</p>
+                <p>Un <span>résumé </span>clair de votre <span>collection</span></p>
+                <a class="btn btn-red">Votre collection</a>
+            </div>
+
+        </div>
+    </div>
 </div>
+
+{# Info #}
+
+<div class="container">
+    <div class="card card-single-home">
+    <div>
+        <p>Créé par un devellopeur junior</p>
+        <p>J’ai créé <span>MyCollection</span> afin de développer mes compétences en développement.</p>
+    </div>
+
+        <img src="build/img/photo-1.webp">
+    </div>
+</div>
+
 
 {% endblock %}
