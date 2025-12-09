@@ -9,6 +9,7 @@
   padding-bottom: v.$padding-xxl ;
   margin-bottom: v.$margin-l;
 
+
   .container {
     div {
       background-color: rgba(252, 252, 252, 0.5);
@@ -32,6 +33,30 @@
         margin: 0px;
       }
     }
+
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    height: 305px;
+
+
+    .container {
+      div {
+
+        h1 {
+          font-size: v.$banner-2;
+        }
+
+        p {
+          font-size: v.$banner-1;
+          text-transform: uppercase;
+        }
+      }
+
+    }
+
 
   }
 }
