@@ -19,13 +19,27 @@
 
     }
 
+    .navbar-links-mobile {
+        width: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        a {
+            &:visited {
+                color: white;
+            }
+        }
+    }
+
+
     @media (min-width: 768px) {
 
         .logo {
             width: 15.563rem;
         }
 
-        .fa-list {
+        .navbar-links-mobile {
             display: none;
         }
 
