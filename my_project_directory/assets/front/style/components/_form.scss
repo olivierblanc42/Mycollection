@@ -51,3 +51,14 @@
         }
     }
 }
+
+
+.register-link{
+        padding-top: 0.5rem;
+    a{
+    color: v.$color-dark-gray;
+    &:hover{
+        color: v.$color-red;
+    }
+    }
+}
