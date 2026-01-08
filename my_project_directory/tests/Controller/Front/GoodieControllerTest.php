@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Tests\Controller;
+namespace App\Tests\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-final class HomeControllerTest extends WebTestCase
+final class GoodieControllerTest extends WebTestCase
 {
     public function testIndex(): void
     {
         $client = static::createClient();
-        $client->request('GET', '/home');
+        $client->request('GET', '/goodie');
 
         self::assertResponseIsSuccessful();
     }
