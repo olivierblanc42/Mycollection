@@ -19,12 +19,16 @@
                 {% include 'front/partials/navbar.html.twig' %}
             {% endblock %}
         </header>
+
+       <div class="content">
         {% block body %}{% endblock %}
+         </div>
         <footer>
              {% block footer %}
                              {% include 'front/partials/footer.html.twig' %}
 
              {% endblock %}
         </footer>
+       
     </body>
 </html>
