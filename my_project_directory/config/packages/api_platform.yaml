@@ -1,8 +1,21 @@
 api_platform:
-    asset_package: null
-    title: Hello API Platform
+    title: Hello API Platform MyCollection
     version: 1.0.0
+
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+
+    patch_formats:
+        json: ['application/merge-patch+json']
+
     defaults:
         stateless: true
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
+
+    swagger:
+        versions: [3]
+        api_keys:
+            JWT:
+                name: Authorization
+                type: header
