@@ -7,27 +7,37 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+
 
 #[ORM\Entity(repositoryClass: IllustratorRepository::class)]
+#[ApiResource]
+
 class Illustrator
 {
+    /** The ID of this illustrator. */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
+    /** The nickname of this illustrator. */
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $nickname = null;
 
+    /** The firstName of this illustrator. */
     #[ORM\Column(length: 50)]
     private ?string $firstName = null;
 
+    /** The lastName of this illustrator. */
     #[ORM\Column(length: 50)]
     private ?string $lastName = null;
 
+    /** The illustrator picture of this illustrator. */
     #[ORM\Column(length: 255)]
     private ?string $illustratorPicture = null;
 
+    /** The birth date of this illustrator. */
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTime $birthDate = null;
 

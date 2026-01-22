@@ -7,24 +7,33 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+
 
 #[ORM\Entity(repositoryClass: ItemLicenseRepository::class)]
+#[ApiResource]
+
 class ItemLicense
 {
+    /** The ID of this ItemLicense. */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
+    /** The creation date of this ItemLicense. */
     #[ORM\Column]
     private ?\DateTime $creationDate = null;
 
+    /** The label of this ItemLicense. */
     #[ORM\Column(length: 50)]
     private ?string $label = null;
 
+    /** The description of this ItemLicense. */
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
+    /** The release date of this ItemLicense. */
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTime $releaseDate = null;
 

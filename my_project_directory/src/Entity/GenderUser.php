@@ -6,15 +6,22 @@ use App\Repository\GenderUserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+
 
 #[ORM\Entity(repositoryClass: GenderUserRepository::class)]
+#[ApiResource]
+
 class GenderUser
 {
+
+    /** The ID of this gender user. */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
+    /** The label of this gender user. */
     #[ORM\Column(length: 50)]
     private ?string $label = null;
 

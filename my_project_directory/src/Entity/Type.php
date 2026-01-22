@@ -6,15 +6,22 @@ use App\Repository\TypeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+
 
 #[ORM\Entity(repositoryClass: TypeRepository::class)]
+#[ApiResource]
+
 class Type
 {
+
+    /** The ID of this Type. */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
+    /** The label of this Type. */
     #[ORM\Column(length: 50)]
     private ?string $label = null;
 

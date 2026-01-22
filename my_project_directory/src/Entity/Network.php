@@ -4,18 +4,25 @@ namespace App\Entity;
 
 use App\Repository\NetworkRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+
 
 #[ORM\Entity(repositoryClass: NetworkRepository::class)]
+#[ApiResource]
+
 class Network
 {
+    /** The ID of this Network. */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
+    /** The platform of this Network. */
     #[ORM\Column(length: 100)]
     private ?string $platform = null;
 
+    /** The url of this Network. */
     #[ORM\Column(length: 255)]
     private ?string $url = null;
 

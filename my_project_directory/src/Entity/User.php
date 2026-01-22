@@ -20,11 +20,14 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+
+    /** The ID of this user. */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
+    /** The email of this user. */
     #[ORM\Column(length: 180)]
     private ?string $email = null;
 
@@ -40,21 +43,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    /** The firstname of this user. */
     #[ORM\Column(length: 50)]
     private ?string $firstName = null;
 
+    /** The lastname of this user. */
     #[ORM\Column(length: 100)]
     private ?string $lastName = null;
 
+    /** The username of this user. */
     #[ORM\Column(length: 50)]
     private ?string $userName = null;
 
+    /** The user picture of this user. */
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $userPicture = null;
 
+    /** The registration date  of this user. */
     #[ORM\Column]
     private ?\DateTime $registrationDate = null;
 
+    /** The birth date of this user. */
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTime $birthDate = null;
 
