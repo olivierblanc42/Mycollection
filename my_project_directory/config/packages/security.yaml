@@ -14,15 +14,16 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         api:
+            pattern: ^/api
             stateless: true
             provider: app_user_provider
             json_login:
-                check_path: /authentication_token
-                username_path: username
+                check_path: /api/authentication_token
+                username_path: email
                 password_path: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
-            jwt: ~
+            jwt: ~    
         main:
             lazy: true
             provider: app_user_provider
@@ -47,6 +48,8 @@ security:
         - { path: ^/login, roles: PUBLIC_ACCESS }
         - { path: ^/register, roles: PUBLIC_ACCESS }
         - { path: ^/user, roles: ROLE_USER }
+        - { path: ^/api/docs, roles: PUBLIC_ACCESS } # Allows accessing the Swagger UI
+        - { path: ^/api/authentication_token, roles: PUBLIC_ACCESS }
 
 when@test:
     security:
