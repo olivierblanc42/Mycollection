@@ -18,7 +18,8 @@
     font-size: v.$size-button-m;
     padding-top: v.$padding-s;
     padding-bottom: v.$padding-s;
-    width: 188px;
+    width: 100%;
+    max-width: 188px;
     border-radius:5px ;
     -webkit-border-radius:5px ;
     -moz-border-radius:5px ;
