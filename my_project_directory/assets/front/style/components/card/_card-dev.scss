@@ -1,0 +1,56 @@
+@use "../../../../shared/style/variable" as v;
+
+
+
+.card-dev {
+    height: 380px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-bottom: v.$margin-l;
+
+    div {
+        p {
+            &:nth-child(1) {
+                font-weight: bold;
+            }
+        }
+    }
+
+    img {
+        width: 148px;
+        height: 148px;
+    }
+
+
+
+
+}
+
+
+@media (min-width: 768px) {
+
+
+    .card-dev {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: left;
+
+        div {
+            width: 50%;
+        }
+    }
+
+}
