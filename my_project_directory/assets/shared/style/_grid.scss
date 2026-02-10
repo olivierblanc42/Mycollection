@@ -1,0 +1,38 @@
+@use "variable" as v;
+
+.grid-card {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: v.$margin-m ;
+    margin-bottom: v.$margin-m ;
+
+
+
+    @media (min-width: 425px) {
+        grid-template-columns: repeat(2, 180px);
+        justify-content: space-between;
+    }
+
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 288px);
+        justify-content: space-between;
+    }
+
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 288px);
+        justify-content: space-between;
+    }
+
+    @media (min-width: 1280px) {
+        grid-template-columns: repeat(3, 288px);
+        justify-content: space-between;
+    }
+
+    @media (min-width: 1440px) {
+        grid-template-columns: repeat(4, 288px);
+        justify-content: space-between;
+    }
+}
