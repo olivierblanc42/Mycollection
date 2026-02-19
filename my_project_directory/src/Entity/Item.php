@@ -96,8 +96,7 @@ class Item
     #[ORM\ManyToOne(inversedBy: 'items')]
     private ?Type $type = null;
 
-    #[ORM\ManyToOne(inversedBy: 'items')]
-    private ?Expansion $expansion = null;
+
 
     public function __construct()
     {
@@ -314,15 +313,5 @@ class Item
         return $this;
     }
 
-    public function getExpansion(): ?Expansion
-    {
-        return $this->expansion;
-    }
 
-    public function setExpansion(?Expansion $expansion): static
-    {
-        $this->expansion = $expansion;
-
-        return $this;
-    }
 }
