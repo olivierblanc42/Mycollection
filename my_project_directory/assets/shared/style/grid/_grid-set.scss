@@ -1,0 +1,33 @@
+@use "../variable" as v;
+
+.grid-set {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(1, 100%);
+    margin-top: v.$margin-m ;
+    margin-bottom: v.$margin-m ;
+
+
+
+
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 300px);
+        justify-content: space-between;
+    }
+
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 300px);
+        justify-content: space-between;
+    }
+
+
+
+    @media (min-width: 1440px) {
+        grid-template-columns: repeat(3, 400px);
+        justify-content: space-between;
+    }
+
+
+}
