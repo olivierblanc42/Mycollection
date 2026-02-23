@@ -15,6 +15,12 @@ use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Put;
 
 #[ORM\Entity(repositoryClass: ItemRepository::class)]
+#[ORM\InheritanceType('JOINED')]
+#[ORM\DiscriminatorColumn(name: 'entity_type', type: 'string')]
+#[ORM\DiscriminatorMap([
+    'item' => Item::class,
+    'card_tcg' => CardTcg::class,
+])]
 #[ApiResource(
     operations: [
         new Get(
