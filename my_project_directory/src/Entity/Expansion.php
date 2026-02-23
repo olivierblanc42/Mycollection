@@ -2,18 +2,17 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\ExpansionRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Put;
-
 
 #[ORM\Entity(repositoryClass: ExpansionRepository::class)]
 #[ApiResource(
@@ -35,36 +34,34 @@ use ApiPlatform\Metadata\Put;
         )
     ]
 )]
-
 class Expansion
 {
-    /** The ID of this Expansion. */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    /** The label of this Expansion. */
     #[ORM\Column(length: 50)]
     private ?string $label = null;
 
-    /** The creation date of this Expansion. */
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTime $creationDate = null;
 
-    /** The description of this Expansion. */
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $description = null;
+    #[ORM\Column(length: 1000)]
+    private ?string $descritpion = null;
 
     /**
-     * @var Collection<int, Item>
+     * @var Collection<int, CardTcg>
      */
-    #[ORM\OneToMany(targetEntity: Item::class, mappedBy: 'expansion')]
-    private Collection $items;
+    #[ORM\OneToMany(targetEntity: CardTcg::class, mappedBy: 'expension')]
+    private Collection $cardsTcg;
+
+    #[ORM\ManyToOne(inversedBy: 'expensions')]
+    private ?Tcg $tcg = null;
 
     public function __construct()
     {
-        $this->items = new ArrayCollection();
+        $this->cardsTcg = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -96,44 +93,56 @@ class Expansion
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getDescritpion(): ?string
     {
-        return $this->description;
+        return $this->descritpion;
     }
 
-    public function setDescription(string $description): static
+    public function setDescritpion(string $descritpion): static
     {
-        $this->description = $description;
+        $this->descritpion = $descritpion;
 
         return $this;
     }
 
     /**
-     * @return Collection<int, Item>
+     * @return Collection<int, CardTcg>
      */
-    public function getItems(): Collection
+    public function getCardsTcg(): Collection
     {
-        return $this->items;
+        return $this->cardsTcg;
     }
 
-    public function addItem(Item $item): static
+    public function addCardsTcg(CardTcg $cardsTcg): static
     {
-        if (!$this->items->contains($item)) {
-            $this->items->add($item);
-            $item->setExpansion($this);
+        if (!$this->cardsTcg->contains($cardsTcg)) {
+            $this->cardsTcg->add($cardsTcg);
+            $cardsTcg->setExpansion($this);
         }
 
         return $this;
     }
 
-    public function removeItem(Item $item): static
+    public function removeCardsTcg(CardTcg $cardsTcg): static
     {
-        if ($this->items->removeElement($item)) {
+        if ($this->cardsTcg->removeElement($cardsTcg)) {
             // set the owning side to null (unless already changed)
-            if ($item->getExpansion() === $this) {
-                $item->setExpansion(null);
+            if ($cardsTcg->getExpansion() === $this) {
+                $cardsTcg->setExpansion(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTcg(): ?Tcg
+    {
+        return $this->tcg;
+    }
+
+    public function setTcg(?Tcg $tcg): static
+    {
+        $this->tcg = $tcg;
 
         return $this;
     }
