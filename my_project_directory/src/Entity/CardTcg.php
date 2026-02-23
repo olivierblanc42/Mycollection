@@ -5,15 +5,35 @@ namespace App\Entity;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\CardTcgRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Metadata\Delete;
+use ApiPlatform\Metadata\Put;
 
 #[ORM\Entity(repositoryClass: CardTcgRepository::class)]
-#[ApiResource]
-class CardTcg
+#[ApiResource(
+    operations: [
+        new Get(
+            security: "is_granted('ROLE_USER')"
+        ),
+        new GetCollection(
+            security: "is_granted('ROLE_USER')"
+        ),
+        new Post(
+            security: "is_granted('ROLE_ADMIN')"
+        ),
+        new Delete(
+            security: "is_granted('ROLE_ADMIN')"
+        ),
+        new Put(
+            security: "is_granted('ROLE_ADMIN')"
+        )
+    ]
+)]
+class CardTcg extends Item
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+
 
     #[ORM\Column(length: 20)]
     private ?string $rarity = null;
@@ -21,10 +41,8 @@ class CardTcg
     #[ORM\Column(length: 10)]
     private ?string $cardCode = null;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    #[ORM\ManyToOne(inversedBy: 'cardsTcg')]
+    private ?Expansion $expension = null;
 
     public function getRarity(): ?string
     {
@@ -46,6 +64,18 @@ class CardTcg
     public function setCardCode(string $cardCode): static
     {
         $this->cardCode = $cardCode;
+
+        return $this;
+    }
+
+    public function getExpansion(): ?Expansion
+    {
+        return $this->expension;
+    }
+
+    public function setExpansion(?Expansion $expension): static
+    {
+        $this->expension = $expension;
 
         return $this;
     }
