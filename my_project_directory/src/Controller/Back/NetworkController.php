@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class NetworkController extends AbstractController
 {
-    #[Route('/network', name: 'app_network_admin')]
+    #[Route('/admin/network', name: 'app_network_admin')]
     public function index(): Response
     {
         return $this->render('back/network/index.html.twig', [

@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class IllustratorController extends AbstractController
 {
-    #[Route('/illustrator', name: 'app_illustrator_admin')]
+    #[Route('/admin/illustrator', name: 'app_illustrator_admin')]
     public function index(): Response
     {
         return $this->render('back/illustrator/index.html.twig', [

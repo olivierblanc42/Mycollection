@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class GenderUserController extends AbstractController
 {
-    #[Route('/gender/user', name: 'app_gender_user_admin')]
+    #[Route('/admin/gender/user', name: 'app_gender_user_admin')]
     public function index(): Response
     {
         return $this->render('back/gender_user/index.html.twig', [

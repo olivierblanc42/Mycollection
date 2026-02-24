@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class TypeController extends AbstractController
 {
-    #[Route('/type', name: 'app_type_admin')]
+    #[Route('/admin/type', name: 'app_type_admin')]
     public function index(): Response
     {
         return $this->render('back/type/index.html.twig', [

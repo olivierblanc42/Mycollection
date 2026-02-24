@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class ExpansionController extends AbstractController
 {
-    #[Route('/expansion', name: 'app_expansion_admin')]
+    #[Route('/admin/expansion', name: 'app_expansion_admin')]
     public function index(): Response
     {
         return $this->render('back/expansion/index.html.twig', [
