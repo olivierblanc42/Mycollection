@@ -1,0 +1,8 @@
+// Load the variables file with alias v //
+@use "../../../shared/style/variable" as v;
+
+
+header {
+    background-color: v.$color-dark-gray;
+    padding: v.$padding 0px;
+}

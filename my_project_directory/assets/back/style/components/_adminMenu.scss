@@ -1,0 +1,9 @@
+// Load the variables file with alias v //
+@use "../../../shared/style/variable" as v;
+
+.admin-menu {
+    display: grid;
+    grid-template-columns: repeat(12, 120px);
+    justify-content: space-between;
+    margin-top:v.$margin ;
+}

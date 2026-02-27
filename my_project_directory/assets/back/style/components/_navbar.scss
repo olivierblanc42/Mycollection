@@ -1,0 +1,77 @@
+// Load the variables file with alias v //
+@use "../../../shared/style/variable" as v;
+
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: v.$padding-m;
+    padding-bottom: v.$padding-m;
+    position: relative;
+
+    .logo {
+        width: 8.375rem;
+    }
+
+    .navbar-links {
+        display: none;
+
+    }
+
+    .navbar-links-mobile {
+        width: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        a {
+            &:visited {
+                color: white;
+            }
+        }
+    }
+
+
+    @media (min-width: 768px) {
+
+        .logo {
+            width: 15.563rem;
+        }
+
+        .navbar-links-mobile {
+            display: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1.25rem;
+
+            a {
+                text-align: center;
+                text-decoration: none;
+                color: v.$color-white;
+                .icon-user {
+                    &:before {
+                        display: inline-block;
+                        content: url("../../../img/mage_user.svg");
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+                p {
+                    margin: 0px;
+                }
+            }
+        }
+
+
+    }
+
+
+}
