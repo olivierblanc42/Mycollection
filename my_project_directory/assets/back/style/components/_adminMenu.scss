@@ -5,5 +5,19 @@
     display: grid;
     grid-template-columns: repeat(12, 120px);
     justify-content: space-between;
-    margin-top:v.$margin ;
+    margin-top: v.$margin ;
+
+
+
+
+    @media (min-width: 1280px) {
+        grid-template-columns: repeat(6, 120px);
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    @media (min-width: 1440px) {
+        grid-template-columns: repeat(12, 120px);
+    }
+
 }
