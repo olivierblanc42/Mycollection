@@ -1,1 +1,9 @@
 @use "../../shared/style/main.scss";
+
+
+@use "components/navbar";
+@use "templates/header";
+@use "components/buttons/mainButtons";
+@use "components/adminMenu";
+@use "components/adminCardCrud";
+
