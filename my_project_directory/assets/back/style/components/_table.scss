@@ -1,0 +1,45 @@
+@use "../../../shared/style/variable" as v;
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+        color: white;
+        padding: 0px;
+
+
+        tr {
+            color: #ffffff;
+
+
+            th {
+                &:first-child {
+                    border-top-left-radius: 5px;
+                }
+
+                &:last-child {
+                    border-top-right-radius: 5px;
+                }
+
+                background-color: #cc1516;
+                padding: v.$padding;
+                text-align: center;
+            }
+        }
+    }
+
+
+
+    tbody {
+
+        tr {
+            td {
+                padding: v.$padding;
+                text-align: center;
+            }
+        }
+
+    }
+
+}
