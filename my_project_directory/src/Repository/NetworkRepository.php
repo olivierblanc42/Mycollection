@@ -5,15 +5,28 @@ namespace App\Repository;
 use App\Entity\Network;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @extends ServiceEntityRepository<Network>
  */
-class NetworkRepository extends ServiceEntityRepository
+class NetworkRepository extends AbstractMyProjectRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Network::class);
+    }
+
+
+
+    public function getQbAll(string $network = 'e'): QueryBuilder
+    {
+        $qb = parent::getQbAll($network);
+        // $alias = $qb->getAlias()[0];
+
+        return $qb
+            ->addSelect("$network.id","$network.platform", "$network.url");
+        
     }
 
     //    /**
