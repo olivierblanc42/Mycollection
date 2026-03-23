@@ -1,6 +1,32 @@
-<!DOCTYPE html>
+{% extends 'back/base.html.twig' %}
 
 
 {% block body %}
+<h1>Gestion des réseaux sociaux</h1>
+
+<div class="admin-card-crud">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom du réseau </th>
+                <th>url</th>
+                <th>Artistes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for network in networks %}
+            <tr>
+                <td>{{ network.id }}</td>
+                <td>{{ network.platform }}</td>
+                <td>{{ network.url }}</td>
+                <td></td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
 
 {% endblock %}

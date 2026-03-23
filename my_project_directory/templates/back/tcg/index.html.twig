@@ -1,6 +1,35 @@
 {% extends 'back/base.html.twig' %}
-
+{% block title %}Tcg index{% endblock %}
 
 {% block body %}
 
+<div></div>
+<h1>Gestion des Tcg</h1>
+
+<div class="admin-card-crud">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Label</th>
+                <th>Nombre de produits</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in tcg %}
+            <tr>
+                <td>{{ item.label }}</td>
+                <td><{{ item.description }}/td>
+                <td></td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+
+
+
+
+</div>
 {% endblock %}
