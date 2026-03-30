@@ -56,7 +56,7 @@ class Illustrator
     private ?string $lastName = null;
 
     /** The illustrator picture of this illustrator. */
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $illustratorPicture = null;
 
     /** The birth date of this illustrator. */
