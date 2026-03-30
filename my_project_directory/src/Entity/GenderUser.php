@@ -12,10 +12,13 @@ use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Put;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 
 #[ORM\Entity(repositoryClass: GenderUserRepository::class)]
 #[ApiResource(
+    denormalizationContext: ['groups' => ['person']],
+
     operations: [
         new Get(
             security: "is_granted('ROLE_USER')"
@@ -39,11 +42,13 @@ class GenderUser
 {
 
     /** The ID of this gender user. */
+    #[Groups('person')]
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups('person')]
     /** The label of this gender user. */
     #[ORM\Column(length: 50)]
     private ?string $label = null;
@@ -52,11 +57,11 @@ class GenderUser
      * @var Collection<int, User>
      */
     #[ORM\OneToMany(targetEntity: User::class, mappedBy: 'genderUser')]
-    private Collection $app_users;
+    private Collection $appUsers;
 
     public function __construct()
     {
-        $this->app_users = new ArrayCollection();
+        $this->appUsers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -81,13 +86,13 @@ class GenderUser
      */
     public function getAppUsers(): Collection
     {
-        return $this->app_users;
+        return $this->appUsers;
     }
 
     public function addAppUser(User $appUser): static
     {
-        if (!$this->app_users->contains($appUser)) {
-            $this->app_users->add($appUser);
+        if (!$this->appUsers->contains($appUser)) {
+            $this->appUsers->add($appUser);
             $appUser->setGenderUser($this);
         }
 
@@ -96,7 +101,7 @@ class GenderUser
 
     public function removeAppUser(User $appUser): static
     {
-        if ($this->app_users->removeElement($appUser)) {
+        if ($this->appUsers->removeElement($appUser)) {
             // set the owning side to null (unless already changed)
             if ($appUser->getGenderUser() === $this) {
                 $appUser->setGenderUser(null);
