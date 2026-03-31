@@ -4,6 +4,28 @@
 {% block body %}
 <h1>Gestion des Types des items</h1>
 
+
+<div class="card">
+<div class="form-box">
+<h2>Ajouter un type</h2>
+    {{ form_errors(typeForm) }}
+    {{ form_start(typeForm) }}
+
+{{ form_row(typeForm.label) }}
+
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(typeForm) }}
+</div>
+</div>
+
+
+
+
+
+
+
+
+
 <div class="admin-card-crud">
 
     <table class="table">
@@ -27,4 +49,8 @@
             
         </tbody>
     </table>
+
+
+
+    
 {% endblock %}
