@@ -1,0 +1,20 @@
+@use "../../../../shared/style/variable" as v;
+
+.btn-red {
+    background-color: v.$color-red ;
+    color: v.$color-white;
+    font-size: v.$size-button-m;
+    padding-top: v.$padding-s;
+    padding-bottom: v.$padding-s;
+    width: 100%;
+    max-width: 188px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    &:hover {
+        background-color: #cc1516;
+    }
+}
