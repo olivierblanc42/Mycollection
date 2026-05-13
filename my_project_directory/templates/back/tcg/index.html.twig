@@ -6,6 +6,21 @@
 <div></div>
 <h1>Gestion des Tcg</h1>
 
+<div class="card">
+<div class="form-box">
+<h2>Ajouter un TCG</h2>
+    {{ form_errors(tcgForm) }}
+    {{ form_start(tcgForm) }}
+
+{{ form_row(tcgForm.label) }}
+{{ form_row(tcgForm.description) }}
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(tcgForm) }}
+</div>
+</div>
+
+
+
 <div class="admin-card-crud">
 
     <table class="table">

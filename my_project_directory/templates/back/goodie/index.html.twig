@@ -5,6 +5,30 @@
 {% block body %}
 <h1>Gestion des Goodies</h1>
 
+<div class="card">
+<div class="form-box">
+<h2>Ajouter un Goodie</h2>
+    {{ form_errors(goodiesForm) }}
+    {{ form_start(goodiesForm) }}
+{{ form_row(goodiesForm.title) }}
+{{ form_row(goodiesForm.description) }}
+{{ form_row(goodiesForm.releaseDate) }}
+{{ form_row(goodiesForm.itemLicenses) }}
+{{ form_row(goodiesForm.illustrator) }}
+{{ form_row(goodiesForm.category) }}
+{{ form_row(goodiesForm.characters) }}
+{{ form_row(goodiesForm.type) }}
+
+
+
+
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(goodiesForm) }}
+</div>
+</div>
+
+
+
 <div class="admin-card-crud">
 
     <table class="table">

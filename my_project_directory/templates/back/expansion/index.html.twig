@@ -3,7 +3,20 @@
 
 {% block body %}
 <h1>Gestion des Extensions</h1>
+<div class="card">
+<div class="form-box">
+<h2>Ajouter une extension</h2>
+    {{ form_errors(expansionForm) }}
+    {{ form_start(expansionForm) }}
 
+{{ form_row(expansionForm.label) }}
+{{ form_row(expansionForm.creationDate) }}
+{{ form_row(expansionForm.descritpion) }}
+{{ form_row(expansionForm.tcg) }}
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(expansionForm) }}
+</div>
+</div>
 <div class="admin-card-crud">
 
     <table class="table">

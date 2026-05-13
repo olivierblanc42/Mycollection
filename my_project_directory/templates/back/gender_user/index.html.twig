@@ -4,6 +4,20 @@
 {% block body %}
 <h1>Gestion des genres de utilisateurs</h1>
 
+
+<div class="card">
+<div class="form-box">
+<h2>Ajouter un genres utilisateurs</h2>
+    {{ form_errors(genderUserForm) }}
+    {{ form_start(genderUserForm) }}
+
+{{ form_row(genderUserForm.label) }}
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(genderUserForm) }}
+</div>
+</div>
+
+
 <div class="admin-card-crud">
 
     <table class="table">

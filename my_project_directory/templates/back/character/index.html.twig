@@ -4,6 +4,21 @@
 {% block body %}
 <h1>Gestion des Personnages</h1>
 
+
+<div class="card">
+<div class="form-box">
+<h2>Ajouter un Personnage</h2>
+    {{ form_errors(characterForm) }}
+    {{ form_start(characterForm) }}
+
+{{ form_row(characterForm.name) }}
+
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(characterForm) }}
+</div>
+</div>
+
+
 <div class="admin-card-crud">
 
     <table class="table">

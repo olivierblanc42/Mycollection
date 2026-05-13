@@ -5,6 +5,28 @@
 
 <h1>Gestion des cartes</h1>
 
+<div class="card">
+<div class="form-box">
+<h2>Ajouter une carte</h2>
+    {{ form_errors(cardTcgForm) }}
+    {{ form_start(cardTcgForm) }}
+
+    {{ form_row(cardTcgForm.title) }}
+    {{ form_row(cardTcgForm.description) }}
+    {{ form_row(cardTcgForm.rarity) }}
+    {{ form_row(cardTcgForm.cardCode) }}
+    {{ form_row(cardTcgForm.itemLicenses) }}
+    {{ form_row(cardTcgForm.illustrator) }}
+    {{ form_row(cardTcgForm.category) }}
+    {{ form_row(cardTcgForm.characters) }}
+    {{ form_row(cardTcgForm.type) }}
+    {{ form_row(cardTcgForm.expension) }}
+
+
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(cardTcgForm) }}
+</div>
+</div>
 <div class="admin-card-crud">
 
     <table class="table">

@@ -4,6 +4,26 @@
 {% block body %}
 <h1>Gestion des Licenses</h1>
 
+
+<div class="card">
+<div class="form-box">
+<h2>Ajouter une license</h2>
+    {{ form_errors(itemLicense) }}
+    {{ form_start(itemLicense) }}
+{{ form_row(itemLicense.label) }}
+{{ form_row(itemLicense.description) }}
+{{ form_row(itemLicense.releaseDate) }}
+{{ form_row(itemLicense.items) }}
+
+
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(itemLicense) }}
+</div>
+</div>
+
+
+
+
 <div class="admin-card-crud">
 
     <table class="table">

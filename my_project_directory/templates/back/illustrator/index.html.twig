@@ -4,6 +4,25 @@
 {% block body %}
 <h1>Gestion des  Illustrateurs</h1>
 
+
+<div class="card">
+<div class="form-box">
+<h2>Ajouter un Illustrateur</h2>
+    {{ form_errors(illustratorForm) }}
+    {{ form_start(illustratorForm) }}
+{{ form_row(illustratorForm.nickname) }}
+{{ form_row(illustratorForm.firstName) }}
+{{ form_row(illustratorForm.lastName) }}
+{{ form_row(illustratorForm.illustratorPicture) }}
+{{ form_row(illustratorForm.birthDate) }}
+
+
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(illustratorForm) }}
+</div>
+</div>
+
+
 <div class="admin-card-crud">
 
     <table class="table">

@@ -4,6 +4,25 @@
 {% block body %}
 <h1>Gestion des réseaux sociaux</h1>
 
+
+
+<div class="card">
+<div class="form-box">
+<h2>Ajouter un Personnage</h2>
+    {{ form_errors(networksForm) }}
+    {{ form_start(networksForm) }}
+{{ form_row(networksForm.platform) }}
+{{ form_row(networksForm.url) }}
+
+
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(networksForm) }}
+</div>
+</div>
+
+
+
+
 <div class="admin-card-crud">
 
     <table class="table">

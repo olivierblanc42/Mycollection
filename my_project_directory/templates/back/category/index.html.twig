@@ -4,6 +4,23 @@
 {% block body %}
 <h1>Gestion des Catégories</h1>
 
+
+<div class="card">
+<div class="form-box">
+<h2>Ajouter une catégorie</h2>
+    {{ form_errors(categoryForm) }}
+    {{ form_start(categoryForm) }}
+
+{{ form_row(categoryForm.label) }}
+
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(categoryForm) }}
+</div>
+</div>
+
+
+
+
 <div class="admin-card-crud">
 
     <table class="table">
