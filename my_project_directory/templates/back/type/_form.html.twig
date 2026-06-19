@@ -1,0 +1,23 @@
+<div class="card">
+<div class="form-box">
+    {{ form_errors(typeForm) }}
+    {{ form_start(typeForm) }}
+
+{{ form_row(typeForm.label) }}
+
+        <button  type="submit" class="btn btn-red">Envoyer</button>
+    {{ form_end(typeForm) }}
+</div>
+</div>
+
+{# a utilliser a la palce du dessus {{ form_start(typeForm) }}
+<div class="card">
+<div class="form-box">
+    {{ form_widget(typeForm) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+</div>
+</div>
+{{ form_end(typeForm) }} #}
+
+
+

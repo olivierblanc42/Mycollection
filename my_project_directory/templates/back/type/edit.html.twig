@@ -1,0 +1,16 @@
+{% extends 'back/base.html.twig' %}
+{% block title %}Edit Type {% endblock %}
+{% block body %}
+    <h1>Edit type</h1>
+
+    {{ include('back/type/_form.html.twig', {'button_label': 'Update'}) }}
+<div class="show-action">
+    <a class="btn btn-red" href="{{ path('app_type_admin') }}">Retour</a>
+
+
+
+
+
+    {{include('back/type/_delete_form.html.twig')}}
+</div>
+{% endblock %}

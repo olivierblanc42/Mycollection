@@ -1,0 +1,21 @@
+{% extends 'back/base.html.twig' %}
+
+
+
+{% block body %}
+
+<div class="card">
+<div class="form-box">
+<h1>Type: {{type.label}}</h1>
+<p>{{type.label}}</p>
+</div>
+</div>
+
+  <div class="show-action">
+      <a class="btn btn-red" href="{{ path('app_type_admin') }}">Retour</a>
+    <a class="btn btn-red" href="{{ path('app_type_admin_edit', {'id': type.id}) }}">Edit</a>
+
+    {{include('back/type/_delete_form.html.twig')}}
+  </div>
+
+{% endblock %}

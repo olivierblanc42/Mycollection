@@ -1,0 +1,12 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %} Nouveau Type{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un type</h1>
+
+
+    {{ include('back/type/_form.html.twig') }}
+
+    <a class="btn btn-red" href="{{ path('app_type_admin') }}">Retour</a>
+{% endblock %}

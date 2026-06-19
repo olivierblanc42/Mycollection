@@ -5,26 +5,17 @@
 <h1>Gestion des Types des items</h1>
 
 
-<div class="card">
-<div class="form-box">
-<h2>Ajouter un type</h2>
-    {{ form_errors(typeForm) }}
-    {{ form_start(typeForm) }}
-
-{{ form_row(typeForm.label) }}
-
-        <button  type="submit" class="btn btn-red">Envoyer</button>
-    {{ form_end(typeForm) }}
-</div>
-</div>
 
 
 
 
 
 
+<a class="btn btn-new" href="{{path('app_type_admin_new')}}">nouveau</a>
 
-
+{% for message in app.flashes('error') %}
+        {{ message }}
+{% endfor%}
 
 <div class="admin-card-crud">
 
@@ -32,20 +23,24 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Mom</th>
+                <th>Nom</th>
                 <th>Nombre d'items </th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-       
+       {%for item in type %}
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-           
+                <td>{{ item.id }}</td>
+                <td>{{ item.label }}</td>
+                <td>{{ item.nbItem }}</td>
+                <td><a href="{{path('app_type_admin_show', {'id':item.id})}}"> <i class="fa-solid fa-pen"></i></a>
+                
+                
+                </td>
+            </tr> 
+        {% endfor %}
+ 
             
         </tbody>
     </table>
