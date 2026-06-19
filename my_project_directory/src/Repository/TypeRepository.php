@@ -3,41 +3,33 @@
 namespace App\Repository;
 
 use App\Entity\Type;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\QueryBuilder;
 
 /**
- * @extends ServiceEntityRepository<Type>
+ * @extends AbstractMyProjectRepository<Type>
  */
-class TypeRepository extends ServiceEntityRepository
+class TypeRepository extends AbstractMyProjectRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Type::class);
     }
 
-//    /**
-//     * @return Type[] Returns an array of Type objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('t')
-//            ->andWhere('t.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('t.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
 
-//    public function findOneBySomeField($value): ?Type
-//    {
-//        return $this->createQueryBuilder('t')
-//            ->andWhere('t.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+
+
+    public function getQbAll(string $alias = 'e'): QueryBuilder
+    {
+        $qb = parent::getQbAll($alias);
+        // $alias = $qb->getAlias()[0];
+
+        return $qb
+            ->select("$alias.id", "$alias.label", 'COUNT(items) AS nbItem')
+            ->leftJoin("$alias.items", 'items')
+            ->groupBy("$alias.id")
+            ->having('nbItem >= 0')
+        ;
+    }
+
 }
